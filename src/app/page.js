@@ -1,5 +1,5 @@
 import { prisma } from './db';
-import styles from './page.module.css';
+import TodoItem from '@/components/TodoItem/TodoItem';
 
 function getTodos() {
   return prisma.todo.findMany();
@@ -7,8 +7,6 @@ function getTodos() {
 
 export default async function Home() {
   const todos = await getTodos();
-
-  console.log('TODOS', todos);
 
   return (
     <>
@@ -19,7 +17,7 @@ export default async function Home() {
         <h2>Todo List</h2>
         <ul>
           {todos.map((todo) => (
-            <li key={todo.id}>{todo.title}</li>
+            <TodoItem key={todo.id} {...todo} />
           ))}
         </ul>
       </main>
