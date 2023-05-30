@@ -1,9 +1,12 @@
 import { prisma } from './db';
 import styles from './page.module.css';
 
+function getTodos() {
+  return prisma.todo.findMany();
+}
+
 export default async function Home() {
-  const todos = await prisma.todo.findMany();
-  // await prisma.todo.create({ data: { title: 'test', complete: false } });
+  const todos = await getTodos();
 
   console.log('TODOS', todos);
 
