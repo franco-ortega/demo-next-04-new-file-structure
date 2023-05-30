@@ -1,6 +1,9 @@
+import { getTodos } from '@/utils/getTodos';
 import TodoItem from '../TodoItem/TodoItem';
 
-function TodoList({ todos }) {
+async function TodoList() {
+  const todos = await getTodos();
+
   return (
     <ul>
       {todos.map((todo) => (
