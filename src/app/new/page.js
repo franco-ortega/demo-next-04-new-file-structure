@@ -1,5 +1,10 @@
 import Link from 'next/link';
-import React from 'react';
+
+async function createTodo(data) {
+  'use server';
+
+  console.log('hi');
+}
 
 function Page() {
   return (
