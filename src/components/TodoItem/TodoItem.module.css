@@ -1,0 +1,15 @@
+.TodoItem {
+  background-color: lightgreen;
+  border: solid 0.1rem black;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.TodoItem input[type='checkbox']:checked + label {
+  text-decoration: line-through;
+  opacity: 50%;
+}

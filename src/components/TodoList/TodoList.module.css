@@ -1,0 +1,8 @@
+.TodoList {
+  max-width: 60ch;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
